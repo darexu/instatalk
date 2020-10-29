@@ -16,7 +16,7 @@ class OnlineUsersService
 
   def render_users_online
     ApplicationController.renderer.render(partial: 'layouts/online_users', locals: {
-      message: @users_online
+      users_online: @users_online
     })
   end
 end
