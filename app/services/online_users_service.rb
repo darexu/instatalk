@@ -1,5 +1,5 @@
 class OnlineUsersService
-  def initialize(users_online:)
+  def initialize(users_online)
     @users_online = users_online
   end
 
