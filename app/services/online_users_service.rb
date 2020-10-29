@@ -4,12 +4,12 @@ class OnlineUsersService
   end
 
   def perform
-    broadcast_message
+    broadcast_online
   end
 
   private
 
-  def broadcast_message
+  def broadcast_online
     ActionCable.server.broadcast 'online_users_channel',
                                  message: render_users_online
   end
