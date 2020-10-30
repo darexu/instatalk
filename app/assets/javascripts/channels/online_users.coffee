@@ -8,7 +8,7 @@ jQuery(document).on 'turbolinks:load', ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-    console.log('Received message: ' + data['message'])
-    $('#online').replaceWith (data['message'])
+      console.log('Received message: ' + data['message'])
+      $('#online').replaceWith (data['message'])
     speak: ->
       @perform 'speak'
