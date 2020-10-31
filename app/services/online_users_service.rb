@@ -1,6 +1,6 @@
 class OnlineUsersService
-  def initialize(users_online)
-    @users_online = users_online
+  def initialize(users)
+    @users = users
   end
 
   def perform
@@ -11,7 +11,7 @@ class OnlineUsersService
 
   def broadcast_online
     ActionCable.server.broadcast 'online_users_channel',
-                                 message: render_users_online
+                                 user: @users
   end
 
   def render_users_online

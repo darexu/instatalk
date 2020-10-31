@@ -8,7 +8,11 @@ jQuery(document).on 'turbolinks:load', ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-      console.log('Received message: ' + data['message'])
-      $('#online').replaceWith ('<div id="online">' + data['message'] + '</div>')
+      console.log('Received message: ' + (data['users']));
+      for nickname, status of JSON.parse(data['users'])
+        if status
+          $('#online').append("<span data-role='#{nickname}'>#{nickname}</span>")
+        else if !status
+          $("span[data-role='#{nickname}'").remove()
     speak: ->
       @perform 'speak'
