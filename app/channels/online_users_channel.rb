@@ -12,6 +12,6 @@ class OnlineUsersChannel < ApplicationCable::Channel
 
   def broadcast
     ActionCable.server.broadcast 'online_users_channel',
-                                 user: current_user.as_json
+                                 user: UserSerializer.new(current_user).serializable_hash.to_json
   end
 end
