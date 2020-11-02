@@ -8,11 +8,12 @@ jQuery(document).on 'turbolinks:load', ->
 
     received: (data) ->
       # Called when there's incoming data on the websocket for this channel
-      console.log('Received message: ' + (data['users']));
-      for nickname, status of JSON.parse(data['users'])
-        if status
-          $('#online').append("<span data-role='#{nickname}'>#{nickname}</span>")
-        else if !status
-          $("span[data-role='#{nickname}'").remove()
+      console.log('Received message: ' + data['user'].nickname);
+
+      if data['user'].online && $("span[data-user-id='#{data['user'].id}'").length == 0
+        $('#online').append("<span data-user-id='#{data['user'].id}'>#{data['user'].nickname} </span>")
+      else if !data['user'].online
+        $("span[data-user-id='#{data['user'].id}'").remove()
+
     speak: ->
       @perform 'speak'
