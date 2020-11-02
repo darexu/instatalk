@@ -37,6 +37,7 @@ gem 'jsonapi-serializer'
 # gem 'capistrano-rails', group: :development
 
 group :production do
+  gem 'redis'
   gem 'pg'
 end
 
