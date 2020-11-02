@@ -19,6 +19,3 @@ jQuery(document).on 'turbolinks:load', ->
         $('#online').append("<span data-user-id='#{id}'>#{nickname} </span>")
       else if !online
         $("span[data-user-id='#{id}'").remove()
-
-    speak: ->
-      @perform 'speak'

@@ -8,4 +8,3 @@ production:
   adapter: redis
   url: <%= ENV["REDIS_PATH"] %>
   channel_prefix: instatalk_production
-  
