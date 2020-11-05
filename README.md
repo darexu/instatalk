@@ -5,7 +5,7 @@ The ability to track users s also made.
 Users can create rooms and exchange messages.
 Background tasks are handled using Redis. 
 The data serializer is used to prepare data transmission through the channel.
-An example of how it works can be viewed at heroku - [aconlinechat.herokuapp.com](aconlinechat.herokuapp.com).
+An example of how it works can be viewed at heroku - [aconlinechat.herokuapp.com](https://aconlinechat.herokuapp.com).
 
 
 ## Requirements
