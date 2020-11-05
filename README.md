@@ -1,24 +1,38 @@
-# README
+# Instatalk
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Application in which the online chat function is implemented using the action cable.
+The ability to track users s also made.
+Users can create rooms and exchange messages.
+Background tasks are handled using Redis. 
+The data serializer is used to prepare data transmission through the channel.
+An example of how it works can be viewed at heroku - [aconlinechat.herokuapp.com](aconlinechat.herokuapp.com).
 
-Things you may want to cover:
 
-* Ruby version
+## Requirements
 
-* System dependencies
+ruby '2.7.0'
 
-* Configuration
+rails '~> 5.1.4'
 
-* Database creation
+A complete list of gems used is specified in the Gemfile
 
-* Database initialization
+## Getting started
 
-* How to run the test suite
+Download or clone repo
 
-* Services (job queues, cache servers, search engines, etc.)
+Use bundler (skip gems needed only in production)
+```
+bundle install --without production
+```
 
-* Deployment instructions
+Run database migrations
+```
+bundle exec rails db:migrate
+```
 
-* ...
+Launch Rails server 
+```
+bundle exec rails s
+```
+
+Open `http://localhost:3000` in your browser
